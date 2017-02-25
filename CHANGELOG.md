@@ -1,6 +1,22 @@
 x.x.x Release notes (yyyy-MM-dd)
 =============================================================
 
+### API Breaking Changes
+
+* None.
+
+### Enhancements
+
+* Add an `isAdmin` property to `RLMSyncUser` indicating whether a user is a
+  Realm Object Server administrator.
+
+### Bugfixes
+
+* Fix an issue where the project would fail to compile with clang 4.0.
+
+2.5.0 Release notes (2017-03-38)
+=============================================================
+
 Files written by Realm this version cannot be read by earlier versions of Realm.
 Old files can still be opened and files open in read-only mode will not be
 modified.
