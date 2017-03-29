@@ -1012,10 +1012,16 @@ case "$COMMAND" in
     # CocoaPods
     ######################################
     "cocoapods-setup")
+        rm -rf core
         if [ ! -d core ]; then
           sh build.sh download-sync
           rm core
           mv sync-* core
+
+          mv core/librealm-ios.a core/librealmcore-ios.a
+          mv core/librealm-macosx.a core/librealmcore-macosx.a
+          mv core/librealm-tvos.a core/librealmcore-tvos.a
+          mv core/librealm-watchos.a core/librealmcore-watchos.a
         fi
 
         if [[ "$2" != "swift" ]]; then

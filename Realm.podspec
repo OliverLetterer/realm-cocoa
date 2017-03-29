@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name                    = 'Realm'
-  s.version                 = `sh build.sh get-version`
+  s.version                 = '2.5.0.1'
   s.summary                 = 'Realm is a modern data framework & database for iOS, macOS, tvOS & watchOS.'
   s.description             = <<-DESC
                               The Realm Mobile Database, for Objective-C. (If you want to use Realm from Swift, see the “RealmSwift” pod.)
@@ -8,12 +8,12 @@ Pod::Spec.new do |s|
                               The Realm Mobile Database is a fast, easy-to-use replacement for Core Data & SQLite. Use it with the Realm Mobile Platform for realtime, automatic data sync. Works on iOS, macOS, tvOS & watchOS. Learn more and get help at https://realm.io.
                               DESC
   s.homepage                = "https://realm.io"
-  s.source                  = { :git => 'https://github.com/realm/realm-cocoa.git', :tag => "v#{s.version}", :submodules => true }
+  s.source                  = { :git => 'https://github.com/OliverLetterer/realm-cocoa.git', :tag => "v#{s.version}", :submodules => true }
   s.author                  = { 'Realm' => 'help@realm.io' }
   s.library                 = 'c++', 'z'
   s.requires_arc            = true
   s.social_media_url        = 'https://twitter.com/realm'
-  s.documentation_url       = "https://realm.io/docs/objc/#{s.version}"
+  s.documentation_url       = "https://realm.io/docs/objc/2.5.0"
   s.license                 = { :type => 'Apache 2.0', :file => 'LICENSE' }
 
   public_header_files       = 'include/**/RLMArray.h',
@@ -79,16 +79,16 @@ Pod::Spec.new do |s|
   s.preserve_paths          = %w(build.sh include)
 
   s.ios.deployment_target   = '7.0'
-  s.ios.vendored_library    = 'core/librealm-ios.a'
+  s.ios.vendored_library    = 'core/librealmcore-ios.a'
 
   s.osx.deployment_target   = '10.9'
-  s.osx.vendored_library    = 'core/librealm-macosx.a'
+  s.osx.vendored_library    = 'core/librealmcore-macosx.a'
 
   s.watchos.deployment_target = '2.0'
-  s.watchos.vendored_library  = 'core/librealm-watchos.a'
+  s.watchos.vendored_library  = 'core/librealmcore-watchos.a'
 
   s.tvos.deployment_target = '9.0'
-  s.tvos.vendored_library  = 'core/librealm-tvos.a'
+  s.tvos.vendored_library  = 'core/librealmcore-tvos.a'
 
   s.subspec 'Headers' do |s|
     s.source_files          = public_header_files
